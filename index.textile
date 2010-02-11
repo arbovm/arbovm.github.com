@@ -4,10 +4,10 @@ title: Arbo von Monkiewitsch
 ---
 
 h3. Arbo von Monkiewitsch
-|email     | arbovm (a) gmail.com
-|blog      | "geekiriki.blogspot.com":http://geekiriki.blogspot.com
-|code      | "github.com/arbovm":http://github.com/arbovm
-|twitter   | "twitter.com/arbovm":http://twitter.com/arbovm
-|linkedin  | "linkedin.com/in/arbovm":http://www.linkedin.com/in/arbovm
-|xing      | "xing.com/profile/Arbo_vonMonkiewitsch":https://www.xing.com/profile/Arbo_vonMonkiewitsch
-|facebook  | "facebook.com/people/Arbo-von-Monkiewitsch/100000192434630":http://www.facebook.com/people/Arbo-von-Monkiewitsch/100000192434630
+|email     | arbovm (a) gmail.com|
+|blog      | "geekiriki.blogspot.com":http://geekiriki.blogspot.com|
+|code      | "github.com/arbovm":http://github.com/arbovm|
+|twitter   | "twitter.com/arbovm":http://twitter.com/arbovm|
+|linkedin  | "linkedin.com/in/arbovm":http://www.linkedin.com/in/arbovm|
+|xing      | "xing.com/profile/Arbo_vonMonkiewitsch":https://www.xing.com/profile/Arbo_vonMonkiewitsch|
+|facebook  | "facebook.com/people/Arbo-von-Monkiewitsch/100000192434630":http://www.facebook.com/people/Arbo-von-Monkiewitsch/100000192434630|
