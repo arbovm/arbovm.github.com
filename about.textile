@@ -1,0 +1,6 @@
+---
+layout: default
+title: about
+---
+
+I'm a Software Developer from Germany currently working with JEE/Spring and JRuby on Rails. I'm interested in all kinds of programming languages and agile development.
