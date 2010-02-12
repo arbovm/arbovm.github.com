@@ -5,6 +5,8 @@ title: Arbo von Monkiewitsch
 
 h3. Arbo von Monkiewitsch
 
+p(#about). I’m a Software Developer from Germany currently working with JEE/Spring and JRuby on Rails. I’m interested in all kinds of programming languages and agile development.
+
 |email     | arbovm (a) gmail.com|
 |blog      | "geekiriki.blogspot.com":http://geekiriki.blogspot.com|
 |code      | "github.com/arbovm":http://github.com/arbovm|
