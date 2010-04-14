@@ -11,6 +11,6 @@ p(#about). I’m a Software Developer from Germany currently working with JEE/Sp
 |blog      | "geekiriki.blogspot.com":http://geekiriki.blogspot.com|
 |code      | "github.com/arbovm":http://github.com/arbovm|
 |twitter   | "twitter.com/arbovm":http://twitter.com/arbovm|
+|facebook  | "facebook.com/arbovm":http://www.facebook.com/arbovm|
 |linkedin  | "linkedin.com/in/arbovm":http://www.linkedin.com/in/arbovm|
 |xing      | "xing.com/profile/Arbo_vonMonkiewitsch":https://www.xing.com/profile/Arbo_vonMonkiewitsch|
-|facebook  | "facebook.com/people/Arbo-von-Monkiewitsch/100000192434630":http://www.facebook.com/people/Arbo-von-Monkiewitsch/100000192434630|
