@@ -7,7 +7,7 @@ h3. Arbo von Monkiewitsch
 
 p(#about). I’m a Software Developer from Germany currently working with JEE/Spring and JRuby on Rails. I’m interested in all kinds of programming languages and agile development.
 
-|email     | arbovm !at.gif! gmail.com|
+|email     | arbovm<img id="at-sign" alt="" src="at.gif">gmail.com|
 |blog      | "geekiriki.blogspot.com":http://geekiriki.blogspot.com|
 |code      | "github.com/arbovm":http://github.com/arbovm|
 |twitter   | "twitter.com/arbovm":http://twitter.com/arbovm|
