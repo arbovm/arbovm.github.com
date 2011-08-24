@@ -5,12 +5,13 @@ title: Arbo von Monkiewitsch
 
 h3. Arbo von Monkiewitsch
 
-p(#about). I’m a Software Developer from Germany currently working with JEE/Spring and Ruby on Rails. I’m interested in all kinds of programming languages and agile development.
+p(#about). I'm a Software Developer from Berlin/Germany currently working with Ruby on Rails, Go and other fancy things. I'm interested in all kinds of programming languages and agile development.
 
-|email     | arbovm<img id="at-sign" alt="" src="at.gif">gmail.com|
-|blog      | "geekiriki.blogspot.com":http://geekiriki.blogspot.com|
-|code      | "github.com/arbovm":http://github.com/arbovm|
-|twitter   | "twitter.com/arbovm":http://twitter.com/arbovm|
-|facebook  | "facebook.com/arbovm":http://www.facebook.com/arbovm|
-|linkedin  | "linkedin.com/in/arbovm":http://www.linkedin.com/in/arbovm|
-|xing      | "xing.com/profile/Arbo_vonMonkiewitsch":https://www.xing.com/profile/Arbo_vonMonkiewitsch|
+|email      | arbovm<img id="at-sign" alt="" src="at.gif">gmail.com|
+|blog       | "geekiriki.blogspot.com":http://geekiriki.blogspot.com|
+|code       | "github.com/arbovm":http://github.com/arbovm|
+|twitter    | "twitter.com/arbovm":http://twitter.com/arbovm|
+|facebook   | "facebook.com/arbovm":http://www.facebook.com/arbovm|
+|soundcloud | "soundcloud.com/arbovm":http://www.soundcloud.com/arbovm|
+|linkedin   | "linkedin.com/in/arbovm":http://www.linkedin.com/in/arbovm|
+|xing       | "xing.com/profile/Arbo_vonMonkiewitsch":https://www.xing.com/profile/Arbo_vonMonkiewitsch|
