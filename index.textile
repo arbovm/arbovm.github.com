@@ -5,7 +5,8 @@ title: Arbo von Monkiewitsch
 
 h3. Arbo von Monkiewitsch
 
-p(#about). I'm a Software Developer from Berlin/Germany currently working with Ruby on Rails, Go and other fancy things. I'm interested in all kinds of programming languages and agile development.
+p(#about). I'm a developer from Berlin working at "soundcloud":http://www.soundcloud.com.
+I'm interested in functional programming, scaling, automating infrastructure, cloud computing, big data, [insert more buzzwords here]. 
 
 |email      | arbovm<img id="at-sign" alt="" src="at.gif">gmail.com|
 |blog       | "geekiriki.blogspot.com":http://geekiriki.blogspot.com|
