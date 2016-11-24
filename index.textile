@@ -5,14 +5,12 @@ title: Arbo von Monkiewitsch
 
 h3. Arbo von Monkiewitsch
 
-p(#about). I'm a developer from Berlin working at "soundcloud":http://www.soundcloud.com.
-I'm interested in functional programming, scaling, automating infrastructure, cloud computing, big data, [insert more buzzwords here]. 
+p(#about). I'm an engineering manager at "soundcloud":http://www.soundcloud.com working with infrastructure teams. I like happy teams that ship amazing software.
+
 
 |email      | arbovm<img id="at-sign" alt="" src="at.gif">gmail.com|
-|blog       | "geekiriki.blogspot.com":http://geekiriki.blogspot.com|
 |code       | "github.com/arbovm":http://github.com/arbovm|
 |twitter    | "twitter.com/arbovm":http://twitter.com/arbovm|
-|facebook   | "facebook.com/arbovm":http://www.facebook.com/arbovm|
 |soundcloud | "soundcloud.com/arbovm":http://www.soundcloud.com/arbovm|
 |linkedin   | "linkedin.com/in/arbovm":http://www.linkedin.com/in/arbovm|
 |xing       | "xing.com/profile/Arbo_vonMonkiewitsch":https://www.xing.com/profile/Arbo_vonMonkiewitsch|
