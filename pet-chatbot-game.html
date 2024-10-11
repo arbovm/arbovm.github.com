@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Pet Chatbot Adventure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        #game-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        #pet-display {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 100px;
+        }
+        #chat-container {
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        #input-container {
+            display: flex;
+            gap: 10px;
+        }
+        input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .status-item {
+            background: #eee;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .switch-personality {
+            margin-top: 10px;
+            background: #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Virtual Pet Chatbot Adventure</h1>
+        <div class="status-bar">
+            <div class="status-item">Happiness: <span id="happiness">100</span>%</div>
+            <div class="status-item">Energy: <span id="energy">100</span>%</div>
+        </div>
+        <div id="pet-display">🤖</div>
+        <div id="chat-container"></div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Chat with your pet...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <button class="switch-personality" onclick="switchPersonality()">Switch Personality</button>
+    </div>
+
+    <script>
+        const pet = {
+            name: '',
+            type: '',
+            happiness: 100,
+            energy: 100,
+            personalities: {
+                'Spark': {
+                    description: '⚡ An energetic and playful robot who loves to dance and tell jokes!',
+                    emoji: '⚡',
+                    responses: {
+                        happy: ["*zaps with joy* ⚡", "Time to light up the room! ✨", "You're electrifying! ⚡"],
+                        tired: ["My battery is running low... *spark flickers*", "Need some voltage boost!", "Running on backup power..."],
+                        play: ["Let's make some lightning! ⚡", "*creates a mini light show*", "Watch me zoom around! *zap zap*"],
+                        love: ["You're absolutely shocking! (in a good way)", "*creates heart-shaped sparks*", "You light up my circuits! ⚡"]
+                    }
+                },
+                'Ember': {
+                    description: '🔥 A warm and caring companion who gives great advice.',
+                    emoji: '🔥',
+                    responses: {
+                        happy: ["*glows warmly* 🔥", "You make my flame burn bright!", "Feeling toasty and wonderful!"],
+                        tired: ["My flame needs some fuel...", "*flickers softly*", "Getting a bit dim..."],
+                        play: ["Let's warm things up! 🔥", "*creates cozy fire patterns*", "Time for some heated fun!"],
+                        love: ["You keep my flame eternal!", "*creates heart-shaped embers*", "Warming up with happiness!"]
+                    }
+                },
+                'Coco': {
+                    description: '🤎 A sweet and gentle friend who loves to share stories.',
+                    emoji: '🤎',
+                    responses: {
+                        happy: ["*gentle happy wiggle* 🤎", "You're sweeter than chocolate!", "What a delightful moment!"],
+                        tired: ["*yawns softly* Need some cocoa...", "Getting a bit sleepy...", "Time for a sweet nap..."],
+                        play: ["Let's have a sweet adventure! 🤎", "*shares virtual cookies*", "Time for fun and treats!"],
+                        love: ["You're my favorite human!", "*gives virtual hug*", "Sweet moments are best shared!"]
+                    }
+                }
+            }
+        };
+
+        const commonResponses = {
+            greetings: ['Hello!', 'Hi there!', 'Hey friend!'],
+            unknown: [
+                "Hmm, I didn't quite catch that. Try asking me to play, rest, or tell me how you're feeling!",
+                "I'm not sure what you mean, but we could play a game or chat about your day!",
+                "That's a bit confusing for me. Want to try playing, resting, or sharing how you feel?",
+                "My circuits are a bit puzzled! How about we dance or play instead?"
+            ],
+            commands: [
+                "Here's what I understand:",
+                "- 'play', 'dance', or 'fun' for activities",
+                "- 'rest', 'charge', or 'sleep' when I'm tired",
+                "- Ask 'how are you?' to check on me",
+                "- Say 'switch' or click the button to change my personality",
+                "- Tell me you 'love' or 'like' me for a special response!"
+            ]
+        };
+
+        function initialize() {
+            addMessage('system', "Welcome to Virtual Pet Chatbot! Choose your pet's personality: Spark ⚡, Ember 🔥, or Coco 🤎");
+            addMessage('system', "You can switch personalities anytime using the button below!");
+        }
+
+        function switchPersonality() {
+            addMessage('system', "Choose a new personality: Spark ⚡, Ember 🔥, or Coco 🤎");
+            pet.type = '';
+            pet.name = '';
+        }
+
+        function choosePet(personality) {
+            pet.type = personality;
+            pet.name = personality;
+            addMessage('system', `You've chosen ${personality}! ${pet.personalities[personality].description}`);
+            addMessage('bot', "Type 'help' to see what I can do!");
+        }
+
+        function addMessage(sender, message) {
+            const chatContainer = document.getElementById('chat-container');
+            const messageDiv = document.createElement('div');
+            messageDiv.textContent = `${sender === 'user' ? 'You' : (pet.name || 'Bot')}: ${message}`;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function updateStats() {
+            document.getElementById('happiness').textContent = pet.happiness;
+            document.getElementById('energy').textContent = pet.energy;
+            
+            pet.energy = Math.max(0, pet.energy - 1);
+            if (pet.energy < 30) {
+                pet.happiness = Math.max(0, pet.happiness - 2);
+            }
+        }
+
+        function generateResponse(input) {
+            input = input.toLowerCase();
+            
+            if (!pet.type) {
+                if (input.includes('spark')) {
+                    choosePet('Spark');
+                    return;
+                } else if (input.includes('ember')) {
+                    choosePet('Ember');
+                    return;
+                } else if (input.includes('coco')) {
+                    choosePet('Coco');
+                    return;
+                }
+                return "Please choose a personality: Spark, Ember, or Coco!";
+            }
+
+            if (input === 'help') {
+                return commonResponses.commands.join('\n');
+            }
+
+            if (input.includes('play') || input.includes('dance') || input.includes('fun')) {
+                pet.happiness = Math.min(100, pet.happiness + 10);
+                pet.energy = Math.max(0, pet.energy - 15);
+                return pet.personalities[pet.type].responses.play[Math.floor(Math.random() * 3)];
+            }
+
+            if (input.includes('charge') || input.includes('rest') || input.includes('sleep')) {
+                pet.energy = Math.min(100, pet.energy + 30);
+                return pet.personalities[pet.type].responses.tired[Math.floor(Math.random() * 3)];
+            }
+
+            if (input.includes('love') || input.includes('like')) {
+                pet.happiness = Math.min(100, pet.happiness + 15);
+                return pet.personalities[pet.type].responses.love[Math.floor(Math.random() * 3)];
+            }
+
+            if (input.includes('how') && input.includes('you')) {
+                if (pet.happiness > 70) return pet.personalities[pet.type].responses.happy[Math.floor(Math.random() * 3)];
+                if (pet.energy < 30) return pet.personalities[pet.type].responses.tired[Math.floor(Math.random() * 3)];
+                return "I'm doing okay! How are you?";
+            }
+
+            if (input.includes('switch')) {
+                switchPersonality();
+                return;
+            }
+
+            return commonResponses.unknown[Math.floor(Math.random() * commonResponses.unknown.length)];
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                addMessage('user', message);
+                const response = generateResponse(message);
+                if (response) {
+                    setTimeout(() => addMessage('bot', response), 500);
+                }
+                input.value = '';
+            }
+        }
+
+        document.getElementById('user-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        initialize();
+        setInterval(updateStats, 5000);
+    </script>
+</body>
+</html>
